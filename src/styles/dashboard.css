@@ -1,0 +1,393 @@
+/* ========================================= */
+/*                VARIABLES                  */
+/* ========================================= */
+:root {
+  --green: #2ecc71;
+  --green-dark: #25b863;
+  --green-light: #dfffe8;
+
+  --bg-light: #f4f6f9;
+  --bg-dark: #181a1b;
+
+  --text-dark: #222;
+  --text-light: #f5f5f5;
+
+  --card-light: #ffffff;
+  --card-dark: #1f2123;
+
+  --border: #e1e1e1;
+}
+
+/* ========================================= */
+/*                GLOBAL                     */
+/* ========================================= */
+body {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+}
+
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* ========================================= */
+/*          DASHBOARD CONTAINER              */
+/* ========================================= */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 30px 0;
+}
+
+.dashboard-content {
+  width: 95%;
+  max-width: 1700px;
+}
+
+/* ========================================= */
+/*                 HEADER                     */
+/* ========================================= */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  padding: 10px 0;
+}
+
+.dashboard-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  margin: 0;
+  color: var(--green-dark);
+}
+
+/* ========================================= */
+/*        DARK MODE + LOGOUT SECTION         */
+/* ========================================= */
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.theme-toggle {
+  width: 60px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.theme-toggle.dark {
+  background: var(--green);
+  justify-content: flex-end;
+}
+
+.toggle-thumb {
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logout Button */
+.logout-btn {
+  position: fixed;
+  left: 25px;
+  bottom: 30px;
+  padding: 12px 22px;
+  background: #e74c3c;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: 0.25s;
+  z-index: 2000;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* ========================================= */
+/*                 TABLE WRAP                */
+/* ========================================= */
+.table-container {
+  width: 95%;
+  margin: auto;
+  background: var(--card-light);
+  border-radius: 14px;
+  padding: 25px 30px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  border: 1px solid var(--border);
+}
+
+body.dark .table-container {
+  background: var(--card-dark);
+  border-color: #2c2c2c;
+}
+
+/* ========================================= */
+/*                 TABLE HEADER              */
+/* ========================================= */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Search */
+.search-box {
+  position: relative;
+}
+
+.search-box input {
+  padding: 10px 42px 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  width: 260px;
+  transition: 0.2s;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.icon-search {
+  width: 22px;
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  opacity: 0.6;
+}
+
+/* Add Button */
+.add-btn {
+  background: var(--green);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: var(--green-dark);
+}
+
+.icon-btn {
+  width: 24px;
+  height: 24px;
+  color: inherit;
+}
+
+/* ========================================= */
+/*                     TABLE                 */
+/* ========================================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th {
+  padding: 15px;
+  background: var(--green);
+  color: white;
+  text-align: left;
+  font-size: 17px;
+}
+
+td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+
+body.dark td {
+  border-color: #333;
+}
+
+/* ========================================= */
+/*      STOCK CELDA CORREGIDA                */
+/* ========================================= */
+.stock-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  min-width: 140px;
+}
+
+.stock-number {
+  font-size: 18px;
+  font-weight: 700;
+  width: 50px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.stock-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.stock-btn {
+  width: 40px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f2f2f7;
+  border: 1px solid #d1d1d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.stock-btn:hover {
+  background: #e5e5ea;
+  transform: translateY(-2px);
+}
+
+body.dark .stock-btn {
+  background: #2c2c2e;
+  border-color: #3a3a3c;
+  color: #fff;
+}
+body.dark .stock-btn:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* ========================================= */
+/*        ICONOS EDITAR / ELIMINAR           */
+/* ========================================= */
+.btn-edit, .btn-delete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.25s;
+}
+
+.btn-edit {
+  background-color: #007aff;
+  color: white;
+}
+.btn-edit:hover {
+  background-color: #005bb5;
+}
+
+.btn-delete {
+  background-color: #ff3b30;
+  color: white;
+}
+.btn-delete:hover {
+  background-color: #cc2a1d;
+}
+
+/* ========================================= */
+/*                 PAGINACIÓN                */
+/* ========================================= */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  gap: 15px;
+}
+
+.pagination button {
+  padding: 10px 16px;
+  background: var(--green);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.pagination button:hover {
+  background: var(--green-dark);
+}
+
+/* ========================================= */
+/*                 MODAL                     */
+/* ========================================= */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: var(--card-light);
+  padding: 25px;
+  border-radius: 14px;
+  width: 430px;
+}
+
+body.dark .modal {
+  background: var(--card-dark);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cancel, .save {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.save {
+  background: var(--green);
+  color: white;
+}
+
+.save:hover {
+  background: var(--green-dark);
+}

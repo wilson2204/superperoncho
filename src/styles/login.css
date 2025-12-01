@@ -1,0 +1,255 @@
+/* ============================ */
+/*      FONDO & LAYOUT          */
+/* ============================ */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #4dabf7, #228be6);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Contenedor principal */
+.login-container {
+  width: 360px;
+  padding: 35px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+  animation: fade 0.7s ease-in-out;
+}
+
+/* Animación entrada */
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================ */
+/*            LOGO              */
+/* ============================ */
+
+.logo {
+  width: 95px;
+  display: block;
+  margin: 0 auto 10px auto;
+  animation: bounceLogo 1.3s infinite;
+}
+
+@keyframes bounceLogo {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* ============================ */
+/*           TITULO             */
+/* ============================ */
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+/* ============================ */
+/*           INPUTS             */
+/* ============================ */
+
+.login-form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #d0d0d0;
+  background: white;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.login-form input:focus {
+  border-color: #228be6;
+  box-shadow: 0 0 6px rgba(34, 139, 230, 0.6);
+  outline: none;
+}
+
+/* Contraseña + icono */
+.password-box {
+  position: relative;
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 13px;
+  top: 13px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* ============================ */
+/*       RECORDARME + LINK      */
+/* ============================ */
+
+.extra-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.extra-options label {
+  cursor: pointer;
+}
+
+.forgot {
+  color: #1971c2;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ============================ */
+/*           BOTONES            */
+/* ============================ */
+
+.btn-login,
+.btn-register {
+  width: 100%;
+  padding: 14px;
+  font-size: 17px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-login {
+  background: #1c7ed6;
+  color: white;
+}
+
+.btn-login:hover {
+  background: #1864ab;
+  transform: translateY(-2px);
+}
+
+.btn-register {
+  background: #2f9e44;
+  color: white;
+  margin-top: 12px;
+}
+
+.btn-register:hover {
+  background: #228b3b;
+  transform: translateY(-2px);
+}
+
+/* ============================ */
+/*         RESPONSIVE           */
+/* ============================ */
+
+@media (max-width: 430px) {
+  .login-container {
+    width: 90%;
+    padding: 25px;
+  }
+}
+
+/* Fondo verde clarito */
+body {
+  background: #c8f7c5; /* verde pastel */
+}
+
+/* O si querés que solo el login tenga fondo */
+.login-container {
+  background: #c8f7c5;
+}
+
+.remember-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.remember-box input {
+  width: 16px;
+  height: 16px;
+}
+
+.remember-box {
+  margin-top: 20px;   /* lo baja hacia abajo */
+  margin-bottom: 25px; /* separa del botón */
+}
+.switch-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.switch-box p {
+  margin: 0;
+  font-size: 15px;
+  color: #0f5a2a;
+}
+
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 22px;
+}
+
+/* Checkbox hidden */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: .3s;
+}
+
+/* Circulito */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .3s;
+}
+
+/* Cuando está activado */
+.switch input:checked + .slider {
+  background-color: #0f5a2a;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(22px);
+}

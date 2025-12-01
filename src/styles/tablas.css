@@ -1,0 +1,128 @@
+/* --- TABLA --- */
+.product-table {
+  width: 80%;
+  margin: 40px auto;
+  border-collapse: collapse;
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px;
+  border: 1px solid #ccc;
+}
+
+.product-table button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+/* --- STOCK CELDA --- */
+.stock-cell {
+  text-align: center;
+}
+
+.stock-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Numero del stock */
+.stock-number {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 12px;
+  background: var(--color-bg2);
+  border-radius: 6px;
+  min-width: 45px;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+/* Contenedor botones */
+.stock-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Botones flechas */
+.arrow-btn {
+  background: var(--color-bg2);
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
+  font-size: 14px;
+  width: 26px;
+  height: 22px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0,0,0,0.25);
+}
+
+/* Hover: que brillen más */
+.arrow-btn:hover {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+  transform: scale(1.07);
+}
+
+/* Flecha especial arriba */
+.arrow-btn.up {
+  background: #e8ffe8;
+  border-color: #009900;
+  color: #009900;
+}
+.arrow-btn.up:hover {
+  background: #00c400;
+  color: white;
+}
+
+/* Flecha especial abajo */
+.arrow-btn.down {
+  background: #ffecec;
+  border-color: #cc0000;
+  color: #cc0000;
+}
+.arrow-btn.down:hover {
+  background: #e10000;
+  color: white;
+}
+/* --- ACCIONES --- */
+.action-cell {
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-btn {
+  background: var(--color-bg2);
+  border: 1px solid var(--color-text);
+  padding: 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.action-btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.action-btn.delete:hover {
+  background: #ff4b4b;
+  border-color: #ff4b4b;
+}
+
+.action-icon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
