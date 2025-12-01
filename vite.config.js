@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
-  base: "/superperoncho/", // necesario para GitHub Pages
+  base: "/superperoncho/",
   plugins: [
     react(),
     VitePWA({
@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: "Mi Supermercado",
         short_name: "Super",
-        start_url: "/superperoncho/", 
+        start_url: "/superperoncho/",
         display: "standalone",
         background_color: "#ffffff",
         theme_color: "#4caf50",
@@ -34,3 +34,4 @@ export default defineConfig({
     })
   ]
 })
+
